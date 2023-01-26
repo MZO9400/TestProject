@@ -72,6 +72,6 @@ model Sale {
   createdAt  DateTime @default(now())
   id         String   @id @default(cuid())
   totalPrice Float?
-  orders     Order[]
   updatedAt  DateTime @updatedAt
+  orders      Order[]
 }

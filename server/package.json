@@ -6,13 +6,14 @@
     "start:watch": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "build": "nest build",
-    "test": "jest",
+    "test": "jest --coverage",
     "seed": "ts-node scripts/seed.ts",
     "db:migrate-save": "prisma migrate dev",
     "db:migrate-up": "prisma migrate deploy",
     "db:clean": "ts-node scripts/clean.ts",
     "db:init": "run-s \"db:migrate-save -- --name 'initial version'\" db:migrate-up seed",
     "prisma:generate": "prisma generate",
+    "prisma:format": "prisma format",
     "docker:db": "docker-compose -f docker-compose.db.yml up -d",
     "docker:build": "docker build .",
     "compose:up": "docker-compose up -d",
@@ -43,6 +44,7 @@
     "passport-http": "0.3.0",
     "passport-jwt": "4.0.0",
     "reflect-metadata": "0.1.13",
+    "rxjs": "^7.8.0",
     "swagger-ui-express": "4.3.0",
     "ts-node": "9.1.1"
   },
@@ -68,6 +70,8 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "modulePathIgnorePatterns": ["<rootDir>/dist/"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist/"
+    ]
   }
 }
