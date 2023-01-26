@@ -29,6 +29,8 @@ model Order {
   quantity   Int?
   totalPrice Int?
   updatedAt  DateTime  @updatedAt
+  Sale       Sale?     @relation(fields: [saleId], references: [id])
+  saleId     String?
 }
 
 model Customer {
